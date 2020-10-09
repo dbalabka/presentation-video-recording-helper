@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="description" content="Presenation recording helper">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
+    <meta itemprop="description" content="Client-side WebRTC code samples">
+    <meta itemprop="name" content="WebRTC code samples">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta id="theme-color" name="theme-color" content="#ffffff">
+
+    <base target="_blank">
+
+    <title>getUserMedia: select resolution</title>
+
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="main.css">
+
+    <style>
+        body, html {
+            height: 100%;
+        }
+
+        button {
+            margin: 0 10px 20px 0;
+            width: 90px;
+        }
+
+        div#buttons {
+            margin: 0 0 1em 0;
+        }
+
+        div#container {
+            max-width: 100%;
+        }
+
+        #errormessage {
+            display: none;
+            font-size: 300%;
+        }
+
+        #videoblock {
+            /* display: none; */
+        }
+
+        p#dimensions {
+            height: 1em;
+            margin: 0 0 1.5em 0;
+        }
+
+        video {
+            background: none;
+            height: auto;
+            width: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div id="container">
+
+    <h1>Presentaiton recording helper</h1>
+    <p></p>
+
+    <div id="buttons">
+        <button id="qvga">QVGA</button>
+        <button id="vga">VGA</button>
+        <button id="hd">HD</button>
+        <button id="full-hd">Full HD</button>
+        <button id="fourK">4K</button>
+        <button id="eightK">8K</button>
+    </div>
+
+    <div id="videoblock">
+        <p id="dimensions"></p>
+
+        <video controls id="gum-res-local" playsinline autoplay></video>
+        <div id="width">
+            <label>Width <span></span>px:</label>
+            <input type="range" min="0" max="7680" value="0">
+        </div>
+        <input id="sizelock" type="checkbox">Lock video size<br>
+        <input id="aspectlock" type="checkbox">Lock aspect ratio<br>
+    </div>
+    <p id="errormessage"></p>
+
+    <a href="https://github.com/dbalabka/presentation-video-recording-helper"
+       title="View source for this page on GitHub" id="viewSource">View source on GitHub</a>
+</div>
+
+<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+<script src="main.js" async></script>
+
+<script src="../../../js/lib/ga.js"></script>
+
+</body>
+</html>
