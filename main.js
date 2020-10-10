@@ -26,6 +26,7 @@ const widthInput = document.querySelector('div#width input');
 const widthOutput = document.querySelector('div#width span');
 const aspectLock = document.querySelector('#aspectlock');
 const sizeLock = document.querySelector('#sizelock');
+const pictureInPicture = document.querySelector('#picture-in-picture');
 
 let currentWidth = 0;
 let currentHeight = 0;
@@ -52,6 +53,18 @@ fourKButton.onclick = () => {
 
 eightKButton.onclick = () => {
   getMedia(eightKConstraints);
+};
+
+pictureInPicture.onclick = async () => {
+  try {
+    if (video !== document.pictureInPictureElement) {
+      await video.requestPictureInPicture();
+    } else {
+      await document.exitPictureInPicture();
+    }
+  } catch(error) {
+    console.log(`> Argh! ${error}`);
+  }
 };
 
 const qvgaConstraints = {
